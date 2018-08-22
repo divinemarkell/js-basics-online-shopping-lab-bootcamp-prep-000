@@ -59,5 +59,13 @@ function removeFromCart(item) {
 }
 
 function placeOrder(cardNumber) {
-  // write your code here
+   if (Number.isInteger(cardNumber) ){
+    var valtotal = total();
+    cart.length = 0;
+    return `Your total cost is $${valtotal}, which will be charged to the card ${cardNumber}.`;
+  }
+  else{
+    return `Sorry, we don't have a credit card on file for you.`;
+  }
+  return;
 }
