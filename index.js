@@ -10,7 +10,16 @@ function setCart(c) {
 }
 
 function addToCart(item) {
-
+var obj = {};
+ obj['itemName'] = item;
+ obj['itemPrice'] = Math.floor(Math.random() * 101);
+ if (cart.length === 0){
+    cart[0] = obj;
+ }
+ else{
+   cart.push(obj);
+ }
+ return `${item} has been added to your cart.`;
 }
 
 function viewCart() {
